@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GG-2079 🌻</title>
+    <title>PHOTO ARCHIVE — 1985</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="faveicon.png">
-    <link rel="shortcut icon" href="faveicon.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
     <link rel="stylesheet" href="landing.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- LOGO: outside all sections so fixed positioning works everywhere -->
+    <div class="retro-logo" id="retro-logo">
+        <div class="retro-logo__frame">
+            <div class="retro-logo__scanlines"></div>
+            <div class="retro-logo__corner retro-logo__corner--tl"></div>
+            <div class="retro-logo__corner retro-logo__corner--tr"></div>
+            <div class="retro-logo__corner retro-logo__corner--bl"></div>
+            <div class="retro-logo__corner retro-logo__corner--br"></div>
+            <img src="faveicon.png" alt="Photo Archive Logo" class="retro-logo__img" width="68" height="68">
+            <div class="retro-logo__glitch"></div>
+        </div>
+        <div class="retro-logo__label">PHOTO<br>ARCHIVE</div>
+    </div>
 
     <!-- ══════════════════════════════════════
          LANDING PAGE
@@ -19,20 +33,6 @@
     <div id="landing-section" class="landing-section">
         <div class="noise"></div>
         <div class="scanlines"></div>
-
-        <!-- Retro logo — fixed to viewport top-left -->
-        <div class="retro-logo">
-            <div class="retro-logo__frame">
-                <div class="retro-logo__scanlines"></div>
-                <div class="retro-logo__corner retro-logo__corner--tl"></div>
-                <div class="retro-logo__corner retro-logo__corner--tr"></div>
-                <div class="retro-logo__corner retro-logo__corner--bl"></div>
-                <div class="retro-logo__corner retro-logo__corner--br"></div>
-                <img src="faveicon.png" alt="Photo Archive Logo" class="retro-logo__img" width="68" height="68">
-                <div class="retro-logo__glitch"></div>
-            </div>
-            <div class="retro-logo__label">PHOTO<br>ARCHIVE</div>
-        </div>
 
         <div class="filmstrip filmstrip--top">
             <div class="filmstrip__holes"></div>
@@ -221,11 +221,13 @@
         function enterArchive() {
             document.getElementById('landing-section').classList.add('hidden');
             document.getElementById('gallery-section').classList.remove('hidden');
+            document.getElementById('retro-logo').style.display = 'none';
             loadImages();
         }
         function exitArchive() {
             document.getElementById('gallery-section').classList.add('hidden');
             document.getElementById('landing-section').classList.remove('hidden');
+            document.getElementById('retro-logo').style.display = 'flex';
         }
     </script>
 

@@ -376,12 +376,14 @@
     position: fixed;
     top: 58px;
     left: 16px;
-    z-index: 200;
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 7px;
     animation: logoEntry 1s ease-out 0.2s both;
+    /* hide on gallery page */
+    pointer-events: auto;
 }
 
 @keyframes logoEntry {
@@ -524,4 +526,10 @@
     .landing-main { padding: 68px 14px; }
     .hl-big  { font-size: 3em; }
     .enter-btn__inner { font-size: 0.8em; padding: 12px 20px 12px 24px; letter-spacing: 2px; }
+}
+
+/* hide logo when gallery is visible */
+.gallery-section:not(.hidden) ~ #retro-logo,
+body:has(.gallery-section:not(.hidden)) .retro-logo {
+    display: none;
 }
