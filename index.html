@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHOTO ARCHIVE — 1985</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════
+         LANDING PAGE
+    ══════════════════════════════════════ -->
+    <div id="landing-section" class="landing-section">
+        <div class="noise"></div>
+        <div class="scanlines"></div>
+
+        <div class="filmstrip filmstrip--top">
+            <div class="filmstrip__holes"></div>
+            <div class="filmstrip__track" id="filmstrip-top"></div>
+            <div class="filmstrip__holes"></div>
+        </div>
+        <div class="filmstrip filmstrip--bottom">
+            <div class="filmstrip__holes"></div>
+            <div class="filmstrip__track" id="filmstrip-bottom"></div>
+            <div class="filmstrip__holes"></div>
+        </div>
+
+        <main class="landing-main">
+
+            <!-- LEFT: camera -->
+            <div class="landing-left" aria-hidden="true">
+                <div class="camera-wrap">
+                    <div class="camera">
+                        <div class="camera__body">
+                            <div class="camera__lens-ring">
+                                <div class="camera__lens">
+                                    <div class="camera__lens-inner">
+                                        <div class="camera__aperture"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="camera__viewfinder"></div>
+                            <div class="camera__shutter-btn"></div>
+                            <div class="camera__brand">PHOTO ARCHIVE</div>
+                            <div class="camera__film-window"></div>
+                        </div>
+                        <div class="camera__flash"></div>
+                    </div>
+                    <div class="camera__shadow"></div>
+                </div>
+                <div class="polaroid polaroid--1">
+                    <div class="polaroid__frame"><div class="polaroid__photo"></div></div>
+                    <div class="polaroid__caption">memories.jpg</div>
+                </div>
+                <div class="polaroid polaroid--2">
+                    <div class="polaroid__frame"><div class="polaroid__photo polaroid__photo--2"></div></div>
+                    <div class="polaroid__caption">1985_summer.jpg</div>
+                </div>
+            </div>
+
+            <!-- RIGHT: text panel -->
+            <div class="landing-right">
+                <div class="right-eyebrow">
+                    <span class="eyebrow-tick"></span>
+                    <span>EST. 1985</span>
+                    <span class="eyebrow-line"></span>
+                </div>
+
+                <h1 class="headline">
+                    <span class="hl-small">VINTAGE</span>
+                    <span class="hl-big">PHOTO</span>
+                    <span class="hl-sub">ARCHIVE</span>
+                </h1>
+
+                <p class="tagline">
+                    A nostalgic journey through time,<br>preserved in pixels.
+                </p>
+
+                <div class="divider-rule">
+                    <span class="divider-rule__line"></span>
+                    <span class="divider-rule__icon">▣</span>
+                    <span class="divider-rule__line"></span>
+                </div>
+
+                <ul class="features">
+                    <li><span class="feat-num">01</span><span class="feat-text">Curated analog memories · 1985–2026</span></li>
+                    <li><span class="feat-num">02</span><span class="feat-text">Hosted on Cloudinary, always fast</span></li>
+                    <li><span class="feat-num">03</span><span class="feat-text">Click any photo to view full resolution</span></li>
+                </ul>
+
+                <button class="enter-btn" id="enter-btn" onclick="enterArchive()">
+                    <span class="enter-btn__inner">
+                        <span class="enter-btn__label">ENTER ARCHIVE</span>
+                        <span class="enter-btn__icon">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                    </span>
+                    <span class="enter-btn__glow"></span>
+                </button>
+
+                <div class="meta">
+                    <span>v1.0 RETRO EDITION</span>
+                    <span class="meta__dot">◆</span>
+                    <span>© 1985–2026</span>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+
+    <!-- ══════════════════════════════════════
+         GALLERY PAGE
+    ══════════════════════════════════════ -->
+    <div id="gallery-section" class="gallery-section hidden">
+
+        <!-- Top bar -->
+        <div class="g-topbar">
+            <div class="g-topbar__left">
+                <span class="g-topbar__logo">▣ PHOTO ARCHIVE</span>
+                <span class="g-topbar__year">1985–2026</span>
+            </div>
+            <button class="g-back-btn" onclick="exitArchive()">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                BACK TO HOME
+            </button>
+        </div>
+
+        <!-- Hero — aged / dull -->
+        <div class="g-hero">
+            <div class="g-hero__grain"></div>
+            <div class="g-hero__scanlines"></div>
+            <div class="g-hero__lines"></div>
+            <div class="g-hero__vignette"></div>
+            <div class="g-hero__sprocket g-hero__sprocket--left"></div>
+            <div class="g-hero__sprocket g-hero__sprocket--right"></div>
+            <div class="g-hero__content">
+                <div class="g-hero__stamp">VINTAGE COLLECTION</div>
+                <h1 class="g-hero__title">THE ARCHIVE</h1>
+                <p class="g-hero__sub">Every frame a memory · Use ← → to navigate</p>
+            </div>
+        </div>
+
+        <!-- Toolbar + masonry grid -->
+        <div class="g-body">
+            <div class="g-toolbar">
+                <span class="g-toolbar__count" id="img-count">— photos</span>
+                <span class="g-toolbar__label">▓ LOADING ARCHIVE...</span>
+            </div>
+
+            <div id="gallery" class="g-masonry">
+                <div class="g-loading">
+                    <div class="g-loading__spinner"></div>
+                    <span>[ Reading images... ]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="g-footer">
+            <span class="g-footer__brand">▣ VINTAGE PHOTO ARCHIVE v1.0</span>
+            <span class="g-footer__copy">© 1985–2026 All Rights Reserved</span>
+        </div>
+
+    </div>
+
+    <!-- ══════════════════════════════════════
+         LIGHTBOX  (prev / next)
+    ══════════════════════════════════════ -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox__stage" onclick="event.stopPropagation()">
+
+            <!-- top bar -->
+            <div class="lightbox__topbar">
+                <span class="lightbox__counter" id="lightbox-counter">1 / 1</span>
+                <button class="lightbox__close" onclick="closeLightbox()">✕ CLOSE</button>
+            </div>
+
+            <!-- image row with nav arrows -->
+            <div class="lightbox__row">
+                <button class="lightbox__nav" id="lb-prev" onclick="lightboxPrev()" title="Previous (←)">←</button>
+                <div class="lightbox__img-wrap">
+                    <img id="lightbox-img" src="" alt="">
+                </div>
+                <button class="lightbox__nav" id="lb-next" onclick="lightboxNext()" title="Next (→)">→</button>
+            </div>
+
+            <!-- caption -->
+            <div class="lightbox__caption" id="lightbox-cap"></div>
+        </div>
+    </div>
+
+
+    <script src="landing.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function enterArchive() {
+            document.getElementById('landing-section').classList.add('hidden');
+            document.getElementById('gallery-section').classList.remove('hidden');
+            loadImages();
+        }
+        function exitArchive() {
+            document.getElementById('gallery-section').classList.add('hidden');
+            document.getElementById('landing-section').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
