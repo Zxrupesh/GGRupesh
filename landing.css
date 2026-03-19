@@ -470,24 +470,20 @@
 
 /* the actual image */
 .retro-logo__img {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 2;
-    width: 68px !important;
-    height: 68px !important;
-    max-width: 68px !important;
-    max-height: 68px !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    display: block !important;
-    filter: sepia(0.3) contrast(1.1) brightness(0.85) saturate(0.8);
-    mix-blend-mode: luminosity;
+    width: 68px;
+    height: 68px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: sepia(0.2) contrast(1.05) brightness(0.9);
     transition: filter 0.3s;
 }
 .retro-logo__frame:hover .retro-logo__img {
-    filter: sepia(0.1) contrast(1.2) brightness(1.0) saturate(1.1);
-    mix-blend-mode: normal;
+    filter: sepia(0) contrast(1.1) brightness(1.05);
 }
 
 /* text label beneath */
